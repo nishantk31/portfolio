@@ -1,0 +1,31 @@
+<section class="section" id="experience">
+  <div class="container">
+    <div appReveal>
+      <p class="section-label">Experience</p>
+      <h2 class="section-title">Where I have built and shipped.</h2>
+      <p class="section-lead">
+        Roles and impact drawn directly from my resume — from production GenAI work to early
+        industry exposure.
+      </p>
+    </div>
+
+    <div class="timeline">
+      @for (job of experience; track job.company; let i = $index) {
+        <article appReveal class="job" [appRevealDelay]="revealDelay(i)">
+          <div class="job-top">
+            <h3 class="job-company">
+              <a [href]="job.companyUrl" target="_blank" rel="noreferrer">{{ job.company }}</a>
+            </h3>
+            <span class="job-period">{{ job.period }}</span>
+          </div>
+          <p class="job-meta">{{ job.role }} · {{ job.location }}</p>
+          <ul class="job-bullets">
+            @for (bullet of job.bullets; track bullet) {
+              <li>{{ bullet }}</li>
+            }
+          </ul>
+        </article>
+      }
+    </div>
+  </div>
+</section>

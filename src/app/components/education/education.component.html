@@ -1,0 +1,28 @@
+<section class="section" id="education">
+  <div class="container">
+    <div appReveal>
+      <p class="section-label">Education & certifications</p>
+      <h2 class="section-title">Academic foundation.</h2>
+    </div>
+
+    <div class="edu-grid">
+      <div appReveal class="edu-card" [appRevealDelay]="1">
+        <h3>Education</h3>
+        <p class="edu-school">{{ education.school }}</p>
+        <p class="edu-degree">{{ education.degree }} — CGPA: {{ education.cgpa }}</p>
+        <p class="edu-meta">{{ education.period }} · {{ education.location }}</p>
+      </div>
+
+      <div appReveal class="cert-card" [appRevealDelay]="2">
+        <h3>Certifications</h3>
+        <ul class="cert-list">
+          @for (cert of certifications; track cert.title) {
+            <li>
+              <a [href]="cert.url" target="_blank" rel="noreferrer">{{ cert.title }}</a>
+            </li>
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,54 @@
+<section class="section" id="projects">
+  <div class="container">
+    <div appReveal>
+      <p class="section-label">Projects</p>
+      <h2 class="section-title">Selected work.</h2>
+      <p class="section-lead">
+        Production AI platforms and systems engineering — technologies and outcomes as listed on
+        my resume.
+      </p>
+    </div>
+
+    <div class="project-list">
+      @for (project of projects; track project.title; let i = $index) {
+        <article appReveal class="project" [appRevealDelay]="revealDelay(i)">
+          <div class="project-side">
+            <p class="project-index">{{ projectIndex(i) }}</p>
+            <h3 class="project-title">
+              @if (project.url) {
+                <a [href]="project.url" target="_blank" rel="noreferrer">
+                  {{ project.title }}
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path
+                      d="M7 17L17 7M17 7H9M17 7V15"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </a>
+              } @else {
+                {{ project.title }}
+              }
+            </h3>
+            <p class="project-desc">{{ project.description }}</p>
+            <div class="tech-row">
+              @for (item of project.tech; track item) {
+                <span class="tech">{{ item }}</span>
+              }
+            </div>
+            @if (project.urlNote) {
+              <span class="placeholder-note">{{ project.urlNote }}</span>
+            }
+          </div>
+          <ul class="project-bullets">
+            @for (bullet of project.bullets; track bullet) {
+              <li>{{ bullet }}</li>
+            }
+          </ul>
+        </article>
+      }
+    </div>
+  </div>
+</section>

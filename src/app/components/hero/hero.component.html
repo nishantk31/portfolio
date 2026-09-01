@@ -1,0 +1,25 @@
+<section class="hero" id="top" aria-label="Introduction">
+  <div class="hero-atmosphere" aria-hidden="true">
+    <div class="orb orb-a"></div>
+    <div class="orb orb-b"></div>
+    <div class="plane"></div>
+  </div>
+
+  <div class="container hero-content">
+    <h1 class="hero-brand">Nishant <em>Kohale</em></h1>
+    <p class="hero-role">{{ profile.role }}</p>
+    <p class="hero-headline">{{ profile.headline }}</p>
+    <p class="hero-tagline">{{ profile.tagline }}</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#projects">View projects</a>
+      <a class="btn btn-ghost" href="#contact">Get in touch</a>
+    </div>
+    <div class="hero-meta">
+      <span>{{ profile.location }}</span>
+      <span>4 years experience</span>
+      <a [href]="profile.github.url" target="_blank" rel="noreferrer">
+        GitHub · {{ profile.github.label }}
+      </a>
+    </div>
+  </div>
+</section>

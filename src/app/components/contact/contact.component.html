@@ -1,0 +1,29 @@
+<section class="section contact" id="contact">
+  <div class="container">
+    <div appReveal class="contact-panel">
+      <p class="section-label">Contact</p>
+      <h2 class="section-title">Let's build something intelligent.</h2>
+      <p class="section-lead">
+        Open to conversations about Generative AI engineering, RAG systems, and agentic product
+        work.
+      </p>
+      <div class="contact-actions">
+        <a class="btn btn-primary" [href]="profile.emailHref">Email me</a>
+        <a
+          class="btn btn-ghost"
+          [href]="profile.linkedin.url"
+          target="_blank"
+          rel="noreferrer"
+        >
+          LinkedIn
+        </a>
+        <a class="btn btn-ghost" [href]="profile.resumeFile" download>Download resume</a>
+      </div>
+      <div class="contact-details">
+        <a [href]="profile.emailHref">{{ profile.email }}</a>
+        <a [href]="profile.phoneHref">{{ profile.phone }}</a>
+        <span>{{ profile.location }}</span>
+      </div>
+    </div>
+  </div>
+</section>

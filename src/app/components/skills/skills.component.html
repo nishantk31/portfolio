@@ -1,0 +1,24 @@
+<section class="section" id="skills">
+  <div class="container">
+    <div appReveal>
+      <p class="section-label">Skills</p>
+      <h2 class="section-title">Tools I use every day.</h2>
+      <p class="section-lead">
+        Skill categories and technologies exactly as listed on the resume.
+      </p>
+    </div>
+
+    <div class="skills-grid">
+      @for (group of skills; track group.category; let i = $index) {
+        <div appReveal class="skill-group" [appRevealDelay]="revealDelay(i)">
+          <h3>{{ group.category }}</h3>
+          <ul>
+            @for (item of group.items; track item) {
+              <li>{{ item }}</li>
+            }
+          </ul>
+        </div>
+      }
+    </div>
+  </div>
+</section>

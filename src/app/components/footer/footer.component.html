@@ -1,0 +1,10 @@
+<footer class="footer">
+  <div class="container footer-inner">
+    <p>© {{ year }} {{ profile.name }}. Built from resume content.</p>
+    <div class="footer-links">
+      <a [href]="profile.github.url" target="_blank" rel="noreferrer">GitHub</a>
+      <a [href]="profile.linkedin.url" target="_blank" rel="noreferrer">LinkedIn</a>
+      <a [href]="profile.resumeFile" download>Resume</a>
+    </div>
+  </div>
+</footer>

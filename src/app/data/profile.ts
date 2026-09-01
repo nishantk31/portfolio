@@ -3,7 +3,64 @@
  * Placeholders are marked where the resume does not provide a URL or detail.
  */
 
-export const profile = {
+export interface Profile {
+  name: string;
+  role: string;
+  location: string;
+  phone: string;
+  phoneHref: string;
+  email: string;
+  emailHref: string;
+  linkedin: { label: string; url: string };
+  github: { label: string; url: string };
+  resumeFile: string;
+  summary: string;
+  headline: string;
+  tagline: string;
+}
+
+export interface SkillGroup {
+  category: string;
+  items: string[];
+}
+
+export interface Job {
+  company: string;
+  companyUrl: string;
+  role: string;
+  location: string;
+  period: string;
+  bullets: string[];
+}
+
+export interface Project {
+  title: string;
+  url: string | null;
+  urlNote?: string;
+  tech: string[];
+  description: string;
+  bullets: string[];
+}
+
+export interface Education {
+  school: string;
+  degree: string;
+  cgpa: string;
+  location: string;
+  period: string;
+}
+
+export interface Certification {
+  title: string;
+  url: string;
+}
+
+export interface NavLink {
+  href: string;
+  label: string;
+}
+
+export const profile: Profile = {
   name: 'Nishant Kohale',
   role: 'Generative AI Engineer',
   location: 'Besa, Nagpur, Maharashtra — 440037',
@@ -19,15 +76,15 @@ export const profile = {
     label: 'Nishant31',
     url: 'https://github.com/nishantk31',
   },
-  resumeFile: '/Nishant_Kohale_Resume.pdf',
+  resumeFile: 'Nishant_Kohale_Resume.pdf',
   summary:
     'Generative AI Engineer with 4 years of experience building AI-powered applications, AI agents, and intelligent automation solutions. Hands-on with LLMs (OpenAI), RAG, LangChain, FastAPI, Python, vector databases, prompt engineering, and AI orchestration frameworks to ship production-ready systems. Focused on designing scalable, secure, and high-performance AI solutions for real-world business problems.',
   headline: 'Building production AI systems that think, retrieve, and act.',
   tagline:
     'LLMs, RAG pipelines, and agent workflows — engineered for clarity, speed, and scale.',
-} as const
+};
 
-export const skills = [
+export const skills: SkillGroup[] = [
   {
     category: 'Programming Languages',
     items: ['Python', 'JavaScript'],
@@ -57,9 +114,9 @@ export const skills = [
     category: 'Containerization',
     items: ['Docker'],
   },
-] as const
+];
 
-export const experience = [
+export const experience: Job[] = [
   {
     company: 'KPMG',
     companyUrl: 'https://kpmg.com/in/en.html',
@@ -95,9 +152,9 @@ export const experience = [
       'Collaborated with cross-functional teams to design, deploy, and maintain production-ready Generative AI applications, while actively participating in code reviews and ensuring high-quality engineering standards.',
     ],
   },
-] as const
+];
 
-export const projects = [
+export const projects: Project[] = [
   {
     title: 'Cloud Intel',
     url: 'https://cloudsintel.com/',
@@ -127,7 +184,7 @@ export const projects = [
   },
   {
     title: 'HealthVision',
-    url: null as string | null,
+    url: null,
     urlNote: '[Link unavailable — not listed on resume]',
     tech: ['ChromaDB', 'AutoGen', 'Python', 'Streamlit'],
     description:
@@ -153,17 +210,17 @@ export const projects = [
       'RESTful API: designed endpoints for user registration, login, and access to protected routes.',
     ],
   },
-] as const
+];
 
-export const education = {
+export const education: Education = {
   school: 'G.H. Raisoni College of Engineering',
   degree: 'Bachelor of Engineering (ETC)',
   cgpa: '8.64',
   location: 'Nagpur, Maharashtra',
   period: '06 / 2018 — 06 / 2022',
-} as const
+};
 
-export const certifications = [
+export const certifications: Certification[] = [
   {
     title: 'Cambridge Business English Certificate Preliminary',
     url: 'https://drive.google.com/file/d/1MSZmDjNgFXbeNacxo-2bcsoBeR1180ms/view?usp=drive_link',
@@ -180,13 +237,13 @@ export const certifications = [
     title: 'Introduction to Python Programming (Udemy)',
     url: 'https://www.udemy.com/certificate/UC-SK11MEB6/',
   },
-] as const
+];
 
-export const navLinks = [
+export const navLinks: NavLink[] = [
   { href: '#about', label: 'About' },
   { href: '#experience', label: 'Experience' },
   { href: '#projects', label: 'Projects' },
   { href: '#skills', label: 'Skills' },
   { href: '#education', label: 'Education' },
   { href: '#contact', label: 'Contact' },
-] as const
+];

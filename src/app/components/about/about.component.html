@@ -1,0 +1,55 @@
+<section class="section" id="about">
+  <div class="container">
+    <div appReveal>
+      <p class="section-label">About</p>
+      <h2 class="section-title">Engineer focused on useful AI.</h2>
+    </div>
+
+    <div class="about-grid">
+      <div appReveal class="about-copy" [appRevealDelay]="1">
+        <p>{{ profile.summary }}</p>
+        <p>
+          Currently an Associate Consultant at
+          <a [href]="experience[0].companyUrl" target="_blank" rel="noreferrer">KPMG</a>,
+          working on AI and Generative AI initiatives for Gujarat Government departments —
+          previously an SDE at Click2Cloud building LLM features, RAG systems, and agent-driven
+          automation.
+        </p>
+      </div>
+
+      <aside appReveal class="about-aside" [appRevealDelay]="2">
+        <h3>Details</h3>
+        <dl>
+          <div>
+            <dt>Location</dt>
+            <dd>{{ profile.location }}</dd>
+          </div>
+          <div>
+            <dt>Email</dt>
+            <dd><a [href]="profile.emailHref">{{ profile.email }}</a></dd>
+          </div>
+          <div>
+            <dt>Phone</dt>
+            <dd><a [href]="profile.phoneHref">{{ profile.phone }}</a></dd>
+          </div>
+          <div>
+            <dt>LinkedIn</dt>
+            <dd>
+              <a [href]="profile.linkedin.url" target="_blank" rel="noreferrer">
+                {{ profile.linkedin.label }}
+              </a>
+            </dd>
+          </div>
+          <div>
+            <dt>GitHub</dt>
+            <dd>
+              <a [href]="profile.github.url" target="_blank" rel="noreferrer">
+                {{ profile.github.label }}
+              </a>
+            </dd>
+          </div>
+        </dl>
+      </aside>
+    </div>
+  </div>
+</section>
